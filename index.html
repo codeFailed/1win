@@ -152,6 +152,32 @@
       transition:.2s;
     }
     .cta:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.3)}
+    .hero-actions{
+      display:flex;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:14px;
+    }
+    .promo-offer{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+      padding:8px 13px;
+      border:1px solid rgba(8,199,90,.45);
+      border-radius:12px;
+      background:rgba(8,199,90,.08);
+    }
+    .promo-code{
+      color:#fff;
+      font-size:15px;
+      font-weight:900;
+      letter-spacing:.7px;
+    }
+    .promo-bonus{
+      color:#72e99e;
+      font-size:13px;
+      font-weight:800;
+    }
     .notice{
       margin-top:18px;
       color:#777d83;
@@ -176,6 +202,17 @@
     .grid{
       display:grid;
       grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+    .about-intro{
+      max-width:900px;
+      margin:0 0 18px;
+      color:var(--muted);
+      font-size:16px;
+    }
+    .about-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
       gap:14px;
     }
     .card{
@@ -238,6 +275,7 @@
       .hero{padding:42px 26px;min-height:520px}
       h1{letter-spacing:-2px}
       .grid{grid-template-columns:1fr}
+      .about-grid{grid-template-columns:1fr}
       .features{grid-template-columns:1fr 1fr}
     }
     @media(max-width:520px){
@@ -262,7 +300,7 @@
     <a href="#games">Возможности</a>
   </nav>
 
-  <!-- URL берётся из config.js -->
+  <!-- Ссылка на основной сайт задаётся в скрипте внизу страницы. -->
   <a class="header-cta" data-target-link href="#">Перейти на сайт →</a>
 </header>
 
@@ -276,9 +314,15 @@
         Чтобы открыть основной сайт, воспользуйтесь кнопкой ниже.
       </p>
 
-      <a class="cta" data-target-link href="#">
-        Перейти на сайт <span>→</span>
-      </a>
+      <div class="hero-actions">
+        <a class="cta" data-target-link href="#">
+          Перейти на сайт <span>→</span>
+        </a>
+        <div class="promo-offer" aria-label="Промокод BIZZARD: 500FS плюс 100 процентов">
+          <span class="promo-code">BIZZARD</span>
+          <span class="promo-bonus">500FS + 100%</span>
+        </div>
+      </div>
 
       <div class="notice">
         Информационная страница. Не является официальным сайтом оператора.
@@ -290,27 +334,39 @@
     <div class="section-title">
       <div>
         <h2>Что такое 1WIN?</h2>
-        <p>Кратко об основных направлениях платформы</p>
+        <p>Информация об основных разделах и важных условиях использования платформы.</p>
       </div>
     </div>
 
-    <div class="grid">
+    <p class="about-intro">
+      1WIN — бренд онлайн-платформы, связанной со спортивными ставками и азартными играми.
+      Доступность отдельных разделов и услуг может зависеть от страны. Перед регистрацией
+      проверьте, разрешено ли пользоваться такими сервисами в вашем регионе.
+    </p>
+
+    <div class="about-grid">
       <article class="card">
-        <div class="card-icon">🎰</div>
-        <h3>Ставки</h3>
-        <p>Раздел с различными игровыми форматами и категориями.</p>
+        <div class="card-icon" aria-hidden="true">⚽</div>
+        <h3>Спортивные ставки</h3>
+        <p>Перед ставкой ознакомьтесь с правилами расчёта, условиями отмены события и ограничениями для конкретного вида спорта. Коэффициент не гарантирует выигрыш.</p>
       </article>
 
       <article class="card">
-        <div class="card-icon">⚽</div>
-        <h3>Спорт</h3>
-        <p>Спортивный раздел с событиями и дополнительной информацией.</p>
+        <div class="card-icon" aria-hidden="true">🎰</div>
+        <h3>Казино и игровые разделы</h3>
+        <p>Результат азартных игр может зависеть от случайности. Изучите правила выбранной игры и не рассматривайте игру как способ заработка.</p>
       </article>
 
       <article class="card">
-        <div class="card-icon">🎁</div>
-        <h3>Бонусы</h3>
-        <p>Промо-раздел с актуальными предложениями платформы.</p>
+        <div class="card-icon" aria-hidden="true">🎁</div>
+        <h3>Бонусы и условия</h3>
+        <p>До активации предложения проверьте срок действия, требования к отыгрышу, ограничения и правила вывода средств. Условия могут различаться для разных пользователей и регионов.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon" aria-hidden="true">🔒</div>
+        <h3>Как защитить аккаунт</h3>
+        <p>Переходите на сайт только через проверенные источники. Не сообщайте пароль и коды подтверждения другим людям; включите дополнительные способы защиты, если они доступны.</p>
       </article>
     </div>
   </section>
