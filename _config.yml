@@ -1,0 +1,33 @@
+title: Информация о 1WIN
+description: Независимый справочный сайт о разделах платформы 1WIN, условиях бонусов и безопасности.
+url: https://1win-asqwe.cfd
+baseurl: ""
+lang: ru
+markdown: kramdown
+permalink: pretty
+future: true
+collections:
+  resources:
+    output: true
+    permalink: /:name/
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+      lang: ru
+  - scope:
+      path: "articles"
+      type: pages
+    values:
+      layout: article
+      lang: ru
+  - scope:
+      path: ""
+      type: resources
+    values:
+      layout: default
+      lang: ru
+exclude:
+  - .pages.yml
+  - README-ADMIN.md

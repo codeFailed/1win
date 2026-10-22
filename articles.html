@@ -1,0 +1,18 @@
+---
+title: Статьи о 1WIN — адреса, бонусы, ставки и безопасность
+description: Практические справочные статьи о проверке адресов, условиях бонусов, коэффициентах и защите аккаунта.
+permalink: /articles/
+---
+<header class="page-heading"><p class="eyebrow">База знаний</p><h1>Статьи</h1><p class="lead">Практические материалы. Проверяйте текущие условия и региональную доступность в первичных источниках.</p></header>
+<div class="grid-2">
+  <article class="card"><p class="eyebrow">Безопасность</p><h3><a href="/articles/kak-proverit-adres-sayta/">Как проверить адрес сайта перед входом</a></h3><p>Проверка домена, HTTPS, ссылок и признаков поддельной страницы.</p></article>
+  <article class="card"><p class="eyebrow">Бонусы</p><h3><a href="/articles/kak-chitat-usloviya-bonusa/">Как читать условия бонуса</a></h3><p>Депозит, отыгрыш, лимиты, сроки и региональная доступность.</p></article>
+  <article class="card"><p class="eyebrow">Ставки</p><h3><a href="/articles/koefficienty-i-veroyatnost/">Коэффициенты и вероятность: основы</a></h3><p>Как читать десятичный коэффициент и почему он не гарантирует исход.</p></article>
+  <article class="card"><p class="eyebrow">Аккаунт</p><h3><a href="/articles/zashchita-akkaunta/">Как защитить аккаунт и личные данные</a></h3><p>Пароли, одноразовые коды, устройства и фишинговые сообщения.</p></article>
+  {% assign cms_articles = site.pages | where_exp: "item", "item.layout == 'article'" | sort: "date" | reverse %}
+  {% for article in cms_articles %}
+  {% unless article.url contains "/kak-proverit-adres-sayta/" or article.url contains "/kak-chitat-usloviya-bonusa/" or article.url contains "/koefficienty-i-veroyatnost/" or article.url contains "/zashchita-akkaunta/" %}
+  <article class="card"><p class="eyebrow">Новая статья{% if article.date %} · {{ article.date | date: "%d.%m.%Y" }}{% endif %}</p><h3><a href="{{ article.url }}">{{ article.title | escape }}</a></h3><p>{{ article.description | escape }}</p></article>
+  {% endunless %}
+  {% endfor %}
+</div>

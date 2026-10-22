@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<article class="article-page">
+  <div class="breadcrumbs"><a href="/">Главная</a><span aria-hidden="true">/</span><a href="/articles/">Статьи</a></div>
+  <header class="article-heading">
+    <p class="eyebrow">Справочная статья{% if page.date %} · {{ page.date | date: "%d.%m.%Y" }}{% endif %}</p>
+    <h1>{{ page.title | escape }}</h1>
+    {% if page.description %}<p class="lead">{{ page.description | escape }}</p>{% endif %}
+  </header>
+  <div class="article-body prose">
+    {{ content }}
+  </div>
+  <aside class="notice-box"><strong>Важно:</strong> сведения на этой странице носят общий информационный характер. Проверяйте актуальные правила и доступность в первичных источниках.</aside>
+  <p class="article-back"><a class="text-link" href="/articles/">← Все статьи</a></p>
+</article>

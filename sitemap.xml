@@ -1,6 +1,13 @@
+---
+layout: null
+---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://1win-asqwe.cfd/</loc>
+{% for item in site.pages %}{% if item.url != '/sitemap.xml' and item.sitemap != false %}  <url>
+    <loc>{{ site.url }}{{ item.url }}</loc>
   </url>
+{% endif %}{% endfor %}{% for item in site.resources %}{% if item.sitemap != false %}  <url>
+    <loc>{{ site.url }}{{ item.url }}</loc>
+  </url>
+{% endif %}{% endfor %}
 </urlset>
